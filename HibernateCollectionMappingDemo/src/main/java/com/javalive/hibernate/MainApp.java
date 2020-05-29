@@ -27,14 +27,13 @@ public class MainApp {
 		//adding addresses object to the list of address
 		user.getLisOfAddresses().add(address1);
 		user.getLisOfAddresses().add(address2);
-		
-		
 		try {
 		SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
 		Session session = sessionFactory.openSession(); //create session object from the session factory
 		session.beginTransaction(); //initialize the transaction object from session
 		session.save(user); // save the user
 		session.getTransaction().commit(); //commit the transaction
+		System.out.println("Operation complated successfully!!!!!!!!!!!!");
 		session.close(); //closing session
 		}
 		catch(HibernateException ex) {
