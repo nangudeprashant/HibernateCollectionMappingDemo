@@ -1,5 +1,4 @@
 package com.javalive.entity;
-
 import java.util.ArrayList;
 import java.util.Collection;
 
@@ -15,18 +14,15 @@ import javax.persistence.Table;
 @Table(name = "USER_DETAILS")
 public class UserDetails {
 	@Id
-
 	@Column
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int userId;
 	@Column(name = "USER_NAME") // , type=”String”)
 	private String userName;
-
 	@ElementCollection
 	// Fields (including property get methods)Defines a collection of instances of a
 	// basic type or embeddable class. Must be specified if the collection is to be
 	// mapped by means of a collection table.
-
 	private Collection<Address> lisOfAddresses = new ArrayList<Address>();
 
 	public Collection<Address> getLisOfAddresses() {
